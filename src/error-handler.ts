@@ -1,6 +1,6 @@
 import { NextFunction, Request, Response } from "express";
 import { UnprocessableEntity } from "./exceptions/validation";
-import { ErrorCodes, HttpException } from "./exceptions/root";
+import { ErrorCode, HttpException } from "./exceptions/root";
 import { InternalException } from "./exceptions/internal-exception";
 
 export const errorHandler = (method: Function) => {
@@ -15,7 +15,7 @@ export const errorHandler = (method: Function) => {
         exception = new InternalException(
           "Something went wrong",
           error,
-          ErrorCodes.INTERNAL_EXCEPTION
+          ErrorCode.INTERNAL_EXCEPTION
         );
       }
       next(exception);

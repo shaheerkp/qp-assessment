@@ -5,7 +5,7 @@ export const errorMiddleware = (
   error: HttpException,
   req: Request,
   res: Response,
-  next: NextFunction
+  next:NextFunction
 ) => {
   res
     .status(error.statusCode)
