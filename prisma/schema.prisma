@@ -22,9 +22,26 @@ model User{
   role    Role     @default(USER)
   createdAt DateTime @default(now())
   updatedAt DateTime @updatedAt
+
+  @@map("users")
 }
 
 enum Role {
   USER
   ADMIN
+}
+
+
+model Product{
+  id Int @id @default(autoincrement())
+  name String
+  category String
+  description String
+  price Decimal
+  tags String
+  quantity Int
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  @@map("products")
 }
